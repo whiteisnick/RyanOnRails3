@@ -9,7 +9,7 @@
         <div class="feature">
           <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
-              <%= link_to image_tag(entry.image_url, :class => 'img-responsive img-rounded'), entry %>
+              <%= link_to image_tag(entry.image_url, :class => 'img-responsive img-rounded'), collection_entry_path(@collection, entry) %>
             </div>
             <div class="col-xs-12">
               <h4><%= entry.name %></h4>
@@ -19,5 +19,5 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "New Entry", new_collection_entry %>
+  <%= link_to "New Entry", new_collection_entry_path(@collection) %>
 </div>
