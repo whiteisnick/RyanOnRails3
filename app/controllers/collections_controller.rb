@@ -1,11 +1,12 @@
 class CollectionsController < ApplicationController
-  
+
   def index
     @collections = Collection.all
   end
 
   def show
     @collection = Collection.find(params[:id])
+    @entries = @collection.entries
   end
 
   def new
@@ -24,6 +25,7 @@ class CollectionsController < ApplicationController
 
   def edit
     @collection = Collection.find(params[:id])
+    @entries = @collection.entries
   end
 
   def update
