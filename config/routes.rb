@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'collections#index'
+  resources :collections
+  resources :entries
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
