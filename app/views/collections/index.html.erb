@@ -8,6 +8,9 @@
           </div>
           <div class="col-xs-12">
             <h4><%= collection.name %></h4>
+            <% if user_signed_in? %>
+              <p><%= link_to 'Delete', collection, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+            <% end %>
           </div> <!-- /col -->
         </div> <!-- /row -->
       </div> <!-- /feature -->
