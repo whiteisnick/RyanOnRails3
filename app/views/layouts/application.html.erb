@@ -69,13 +69,9 @@
 
     <div class="container-fluid footer">
       <div class="row">
-        <div class="col-xs-6 copy">
-          <ul class="nav">
+        <div class="col-xs-12 copy">
+          <ul class="nav nav-pills nav-justified">
             <li class="copy">&copy; Ryan Riddle 2015</li>
-          </ul>
-        </div>
-        <div class="col-xs-6 auth">
-          <ul class="nav">
             <% if user_signed_in? %>
               <li>Hey Ryan!</li>
               <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
