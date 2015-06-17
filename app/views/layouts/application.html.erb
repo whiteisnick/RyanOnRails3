@@ -64,11 +64,28 @@
         </div><!--/col-->
       </div><!--/row-->
 
-      <footer>
-        <p>&copy; Ryan Riddle 2015</p>
-      </footer>
 
     </div> <!-- /container -->
+
+    <div class="container-fluid footer">
+      <div class="row">
+        <div class="col-xs-6 copy">
+          <ul class="nav">
+            <li class="copy">&copy; Ryan Riddle 2015</li>
+          </ul>
+        </div>
+        <div class="col-xs-6 auth">
+          <ul class="nav">
+            <% if user_signed_in? %>
+              <li>Hey Ryan!</li>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Ryan, is that you?", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>

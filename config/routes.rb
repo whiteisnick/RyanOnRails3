@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'collections#index'
   resources :entries
   resources :collections do
