@@ -13,10 +13,10 @@ class EntriesController < ApplicationController
 
   def create
     @collection = Collection.find(params[:collection_id])
-    @entry = Collection.entries.new(entry_params)
+    @entry = @collection.entries.new(entry_params)
 
     if @entry.save
-      redirect_to '/'
+      redirect_to collection_entry_path(@collection, @entry)
     else
       render 'new'
     end
@@ -28,10 +28,11 @@ class EntriesController < ApplicationController
   end
 
   def update
+    @collection = Collection.find(params[:collection_id])
     @entry = Entry.find(params[:id])
 
     if @entry.update
-      redirect_to '/'
+      redirect_to collection_entry_path(@collection, @entry)
     else
       render 'edit'
     end
