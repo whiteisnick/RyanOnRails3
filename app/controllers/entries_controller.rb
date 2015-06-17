@@ -1,7 +1,9 @@
 class EntriesController < ApplicationController
 
   def show
-    @entry = Entry.find(params[:id])
+    @collection = Collection.find(params[:collection_id])
+    @entry = @collection.entries.find(params[:id])
+    @entries = @collection.entries
   end
 
   def new
