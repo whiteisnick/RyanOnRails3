@@ -11,13 +11,15 @@
   </div>
   <div class="col-xs-6">
     <%= image_tag(@entry.image_url, :class => 'img-responsive')  %>
+    <br>
+    <p><%= @entry.description %></p>
   </div>
   <div class="col-xs-3">
-    <div class="well">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
+      <div class="well">
         <%= link_to "Edit Entry", edit_collection_entry_path(@collection, @entry) %>
         <%= link_to 'Delete', @entry, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
