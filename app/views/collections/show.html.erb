@@ -19,7 +19,7 @@
               <div class="col-xs-12">
                 <h4><%= entry.name %></h4>
                 <% if user_signed_in? %>
-                  <%= link_to 'Delete', entry, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <p><%= link_to 'Delete', entry, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <% end %>
               </div>
             </div>
