@@ -4,6 +4,7 @@
     <% if user_signed_in? %>
       <div class="well">
         <%= link_to "Edit Entry", edit_collection_entry_path(@collection, @entry) %>
+        <br>
         <%= link_to 'Delete', @entry, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
     <% end %>
