@@ -1,16 +1,16 @@
 <div class="row">
-  <h2 id="collection-name"><%= @collection.name %></h2>
-  <div class="col-xs-2">
+  <div class="col-xs-10 col-xs-offset-1 col-md-2 col-md-offset-0 desc">
+    <h2 id="collection-name"><%= @collection.name %></h2>
     <p><%= @collection.description %></p>
     <% if user_signed_in? %>
       <p><%= link_to "Edit Collection", edit_collection_path(@collection) %></p>
       <p><%= link_to "New Entry", new_collection_entry_path(@collection) %></p>
     <% end %>
   </div>
-  <div class="col-xs-10">
+  <div class="col-xs-12 col-md-10">
     <div class="row">
       <% @entries.each do |entry| %>
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-md-4">
           <div class="feature">
             <div class="row">
               <div class="col-xs-10 col-xs-offset-1">
@@ -22,10 +22,11 @@
                   <p><%= link_to 'Delete', entry, method: :delete, data: { confirm: 'Are you sure?' } %></p>
                 <% end %>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> <!-- row -->
+          </div> <!-- feature -->
+        </div> <!-- col -->
       <% end %>
-    </div>
-  </div>
+    </div> <!-- row -->
+  </div> <!-- col -->
 </div>
+<br>
