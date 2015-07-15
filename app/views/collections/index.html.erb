@@ -1,4 +1,7 @@
 <div class="row">
+  <% if user_signed_in? %>
+    <p><%= link_to 'New Collection', new_collection_path %></p>
+  <% end %>
   <% @collections.each do |collection| %>
     <div class="col-xs-12 col-md-6">
       <div class="feature">
